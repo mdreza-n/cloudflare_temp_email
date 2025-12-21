@@ -7,11 +7,11 @@ compatibility_flags = [ "nodejs_compat" ]
 # 	{ pattern = "temp-email-api.xxxxx.xyz", custom_domain = true },
 # ]
 
-# if you want deploy worker with frontend assets, you need to add assets
-# [assets]
-# directory = "../frontend/dist/"
-# binding = "ASSETS"
-# run_worker_first = true
+if you want deploy worker with frontend assets, you need to add assets
+[assets]
+directory = "../frontend/dist/"
+binding = "ASSETS"
+run_worker_first = true
 
 # enable cron if you want set auto clean up
 # [triggers]
