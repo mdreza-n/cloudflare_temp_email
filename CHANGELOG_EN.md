@@ -6,7 +6,34 @@
   <a href="CHANGELOG_EN.md">🇺🇸 English</a>
 </p>
 
-## v1.2.0(main)
+## v1.3.0(main)
+
+### Features
+
+- feat: |OAuth2| Add email format transformation support for OAuth2, allowing regex-based email format conversion from third-party login providers (e.g., transform `user@domain` to `user@custom.domain`)
+- feat: |OAuth2| Add SVG icon support for OAuth2 providers, admins can configure custom icons for login buttons, preset icons for GitHub, Linux Do, Authentik templates
+- feat: |Send Mail| Auto-hide sendmail tab, sendbox tab, and reply button when send mail is not configured
+
+### Bug Fixes
+
+- fix: |User Address| Fix address count limit check failure when anonymous creation is disabled for logged-in users, add public function `isAddressCountLimitReached` to unify address count limit logic
+
+### Improvements
+
+- refactor: |Code Refactoring| Extract address count limit check as a public function to improve code reusability
+- perf: |Performance| Change address activity time update in GET requests to async execution using `waitUntil`, non-blocking response
+
+## v1.2.1
+
+### Bug Fixes
+
+- fix: |Scheduled Tasks| Fix scheduled task cleanup error `e.get is not a function`, use optional chaining for safe access to Context methods
+
+### Improvements
+
+- style: |AI Extraction| Use softer blue color (#A8C7FA) for AI extraction info in dark mode to reduce eye strain
+
+## v1.2.0
 
 ### Breaking Changes
 
@@ -15,6 +42,7 @@
 ### Features
 
 - feat: |Admin| Add admin account page, display current login method and support logout (password login only)
+- fix: |GitHub Actions| Fix container image name must be lowercase
 - feat: |Email Forwarding| Add source address regex forwarding, filter by sender address, fully backward compatible
 - feat: |Address Source| Add address source tracking feature, record address creation source (Web records IP, Telegram records user ID, Admin panel marked)
 - feat: |Email Filtering| Remove backend keyword parameter, switch to frontend filtering of current page emails, optimize query performance
